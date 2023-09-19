@@ -580,7 +580,7 @@ impl<P: Plugin, B: Backend<P>> Wrapper<P, B> {
         })
     }
 
-    fn make_init_context(&self) -> WrapperInitContext<'_, P, B> {
+    const fn make_init_context(&self) -> WrapperInitContext<'_, P, B> {
         WrapperInitContext { wrapper: self }
     }
 

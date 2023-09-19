@@ -127,7 +127,7 @@ impl ExactSizeIterator for BlockChannelsIter<'_, '_> {}
 impl<'slice, 'sample> Block<'slice, 'sample> {
     /// Get the number of samples per channel in the block.
     #[inline]
-    pub fn samples(&self) -> usize {
+    pub const fn samples(&self) -> usize {
         self.current_block_end - self.current_block_start
     }
 

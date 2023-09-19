@@ -245,7 +245,7 @@ impl<T: Smoothable> Smoother<T> {
     /// sole reason that this will always yield a value, and needing to unwrap all of those options
     /// is not going to be very fun.
     #[inline]
-    pub fn iter(&self) -> SmootherIter<T> {
+    pub const fn iter(&self) -> SmootherIter<T> {
         SmootherIter { smoother: self }
     }
 

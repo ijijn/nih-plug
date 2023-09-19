@@ -418,7 +418,7 @@ impl<T: Enum + PartialEq + 'static> EnumParam<T> {
 impl EnumParamInner {
     /// Get the number of variants for this enum.
     #[allow(clippy::len_without_is_empty)]
-    pub fn len(&self) -> usize {
+    pub const fn len(&self) -> usize {
         self.variants.len()
     }
 

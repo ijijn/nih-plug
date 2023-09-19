@@ -267,7 +267,7 @@ impl BoolParam {
     /// After enabling polyphonic modulation, the plugin **must** start sending
     /// [`NoteEvent::VoiceTerminated`][crate::prelude::NoteEvent::VoiceTerminated] events to the
     /// host when a voice has fully ended. This allows the host to reuse its modulation resources.
-    pub fn with_poly_modulation_id(mut self, id: u32) -> Self {
+    pub const fn with_poly_modulation_id(mut self, id: u32) -> Self {
         self.poly_modulation_id = Some(id);
         self
     }

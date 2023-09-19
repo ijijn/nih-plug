@@ -291,7 +291,7 @@ impl IntParam {
     /// After enabling polyphonic modulation, the plugin **must** start sending
     /// [`NoteEvent::VoiceTerminated`][crate::prelude::NoteEvent::VoiceTerminated] events to the
     /// host when a voice has fully ended. This allows the host to reuse its modulation resources.
-    pub fn with_poly_modulation_id(mut self, id: u32) -> Self {
+    pub const fn with_poly_modulation_id(mut self, id: u32) -> Self {
         self.poly_modulation_id = Some(id);
         self
     }
@@ -328,7 +328,7 @@ impl IntParam {
     /// Display a unit when rendering this parameter to a string. Appended after the
     /// [`value_to_string`][Self::with_value_to_string()] function if that is also set. NIH-plug
     /// will not automatically add a space before the unit.
-    pub fn with_unit(mut self, unit: &'static str) -> Self {
+    pub const fn with_unit(mut self, unit: &'static str) -> Self {
         self.unit = unit;
         self
     }

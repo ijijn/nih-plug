@@ -312,7 +312,7 @@ impl FloatParam {
     /// After enabling polyphonic modulation, the plugin **must** start sending
     /// [`NoteEvent::VoiceTerminated`][crate::prelude::NoteEvent::VoiceTerminated] events to the
     /// host when a voice has fully ended. This allows the host to reuse its modulation resources.
-    pub fn with_poly_modulation_id(mut self, id: u32) -> Self {
+    pub const fn with_poly_modulation_id(mut self, id: u32) -> Self {
         self.poly_modulation_id = Some(id);
         self
     }
@@ -352,7 +352,7 @@ impl FloatParam {
     /// Display a unit when rendering this parameter to a string. Appended after the
     /// [`value_to_string`][Self::with_value_to_string()] function if that is also set. NIH-plug
     /// will not automatically add a space before the unit.
-    pub fn with_unit(mut self, unit: &'static str) -> Self {
+    pub const fn with_unit(mut self, unit: &'static str) -> Self {
         self.unit = unit;
         self
     }
@@ -361,7 +361,7 @@ impl FloatParam {
     /// this is set and a [`value_to_string`][Self::with_value_to_string()] function is not set,
     /// then this is also used when formatting the parameter. This must be a positive, nonzero
     /// number.
-    pub fn with_step_size(mut self, step_size: f32) -> Self {
+    pub const fn with_step_size(mut self, step_size: f32) -> Self {
         self.step_size = Some(step_size);
         self
     }

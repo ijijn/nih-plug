@@ -34,7 +34,7 @@ pub struct Buffer<'a> {
 impl<'a> Buffer<'a> {
     /// Returns the number of samples per channel in this buffer.
     #[inline]
-    pub fn samples(&self) -> usize {
+    pub const fn samples(&self) -> usize {
         self.num_samples
     }
 
@@ -46,7 +46,7 @@ impl<'a> Buffer<'a> {
 
     /// Returns true if this buffer does not contain any samples.
     #[inline]
-    pub fn is_empty(&self) -> bool {
+    pub const fn is_empty(&self) -> bool {
         self.num_samples == 0
     }
 

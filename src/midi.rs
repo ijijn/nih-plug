@@ -341,7 +341,7 @@ pub enum MidiResult<S: SysExMessage> {
 
 impl<S> NoteEvent<S> {
     /// Returns the sample within the current buffer this event belongs to.
-    pub fn timing(&self) -> u32 {
+    pub const fn timing(&self) -> u32 {
         match self {
             NoteEvent::NoteOn { timing, .. } => *timing,
             NoteEvent::NoteOff { timing, .. } => *timing,
@@ -365,7 +365,7 @@ impl<S> NoteEvent<S> {
     }
 
     /// Returns the event's voice ID, if it has any.
-    pub fn voice_id(&self) -> Option<i32> {
+    pub const fn voice_id(&self) -> Option<i32> {
         match self {
             NoteEvent::NoteOn { voice_id, .. } => *voice_id,
             NoteEvent::NoteOff { voice_id, .. } => *voice_id,
@@ -389,7 +389,7 @@ impl<S> NoteEvent<S> {
     }
 
     /// Returns the event's channel, if it has any.
-    pub fn channel(&self) -> Option<u8> {
+    pub const fn channel(&self) -> Option<u8> {
         match self {
             NoteEvent::NoteOn { channel, .. } => Some(*channel),
             NoteEvent::NoteOff { channel, .. } => Some(*channel),

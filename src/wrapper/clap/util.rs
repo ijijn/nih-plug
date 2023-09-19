@@ -80,7 +80,7 @@ impl<T> ClapPtr<T> {
     /// # Safety
     ///
     /// The pointer must point to a valid object with a lifetime that exceeds this object.
-    pub unsafe fn new(ptr: *const T) -> Self {
+    pub const unsafe fn new(ptr: *const T) -> Self {
         Self { inner: ptr }
     }
 }
